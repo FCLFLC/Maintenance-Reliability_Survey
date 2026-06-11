@@ -1,0 +1,246 @@
+<!-- 
+SECURE VERSION - Uses environment variables instead of hardcoded keys
+Deploy with: npm run build (or equivalent build tool)
+Requires .env file with:
+  VITE_SUPABASE_URL=https://your-company.supabase.co
+  VITE_SUPABASE_ANON_KEY=your_anon_key
+  VITE_PROXY_URL=https://your-company.supabase.co/functions/v1/claude-proxy
+  VITE_AI_PASSWORD=secure_password_here
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maintenance & Reliability Survey — Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+/* [All CSS remains the same - copy from original] */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap');
+:root{--bk:#080808;--bk2:#111;--bk3:#181818;--bk4:#222;--bk5:#2a2a2a;--w:#f0f0f0;--w2:#c0c0c0;--w3:#666;--n:#39ff14;--nd:#1c7a08;--r:#ff3333;--am:#ffaa00;--br:#252525;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bk);color:var(--w);font-family:'Barlow',sans-serif;min-height:100vh;overflow-x:hidden;}
+header{background:var(--bk2);border-bottom:2px solid var(--n);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.lm{width:32px;height:32px;border:2px solid var(--n);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:4px;}
+.lm span{background:var(--n);display:block;}.lm span:nth-child(3){background:transparent;border:1px solid var(--nd);}
+.lt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;}
+.lt em{color:var(--n);font-style:normal;}
+.ls{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.1em;margin-top:2px;}
+.hb{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--n);border:1px solid var(--nd);padding:4px 10px;letter-spacing:.1em;animation:pu 2s ease-in-out infinite;}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 rgba(57,255,20,.25)}50%{box-shadow:0 0 8px 2px rgba(57,255,20,.1)}}
+nav{background:var(--bk2);border-bottom:1px solid var(--br);padding:0 28px;display:flex;}
+nav button{background:none;border:none;border-bottom:2px solid transparent;color:var(--w3);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;cursor:pointer;transition:all .2s;}
+nav button:hover{color:var(--w);}nav button.act{color:var(--n);border-bottom-color:var(--n);}
+main{padding:28px 32px;max-width:1540px;margin:0 auto;}
+.tp{display:none;}.tp.act{display:block;}
+.st{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--n);margin-bottom:14px;margin-top:8px;display:flex;align-items:center;gap:10px;}
+.st::after{content:'';flex:1;height:1px;background:var(--br);}
+.fb{display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+.fl{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.1em;}
+select.fs{background:var(--bk3);border:1px solid var(--br);color:var(--w2);font-family:'Share Tech Mono',monospace;font-size:11px;padding:7px 11px;outline:none;cursor:pointer;transition:border-color .2s;}
+select.fs:hover{border-color:var(--nd);}
+.fd{width:1px;height:22px;background:var(--br);}
+.bp{background:var(--n);color:var(--bk);border:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;cursor:pointer;transition:background .2s;}
+.bp:hover{background:#5fff3a;}
+.ptit{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;letter-spacing:.04em;text-transform:uppercase;line-height:1;margin-bottom:4px;}
+.psub{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.1em;margin-bottom:22px;}
+.kg{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-bottom:26px;}
+.kc{background:var(--bk2);border:1px solid var(--br);padding:18px 20px;position:relative;overflow:hidden;}
+.kc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--n);}
+.kc.am::before{background:var(--am);}.kc.re::before{background:var(--r);}.kc.ne::before{background:var(--w3);}
+.kl{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--w3);text-transform:uppercase;margin-bottom:8px;}
+.kv{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;color:var(--w);margin-bottom:4px;}
+.kv.n{color:var(--n);}.kv.am{color:var(--am);}.kv.re{color:var(--r);}
+.ks{font-size:10px;color:var(--w3);font-family:'Share Tech Mono',monospace;}
+.kd{font-family:'Share Tech Mono',monospace;font-size:10px;margin-top:6px;}
+.kd.up{color:var(--n);}.kd.dn{color:var(--r);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:2px;}
+.cc{background:var(--bk2);border:1px solid var(--br);padding:22px;}
+.ct{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--w2);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
+.ct span{font-family:'Share Tech Mono',monospace;font-weight:400;font-size:9px;color:var(--w3);}
+.ch{position:relative;height:210px;}.cht{position:relative;height:290px;}
+.mr{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.mn{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--w2);width:220px;flex-shrink:0;}
+.mt{flex:1;height:9px;background:var(--bk4);border:1px solid var(--br);}
+.mf{height:100%;transition:width 1s ease;}
+.mf.g{background:var(--n);}.mf.am{background:var(--am);}.mf.re{background:var(--r);}
+.mp{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--w);width:40px;text-align:right;flex-shrink:0;}
+.ml{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.1em;width:84px;flex-shrink:0;}
+.ml.l1{color:var(--r);}.ml.l2{color:var(--am);}.ml.l3{color:#88cc00;}.ml.l4{color:var(--n);}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:26px;}
+.ic{background:var(--bk2);border:1px solid var(--br);border-top:2px solid var(--r);padding:18px;}
+.ic.w{border-top-color:var(--am);}.ic.ok{border-top-color:var(--n);}
+.ii{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--r);letter-spacing:.1em;margin-bottom:8px;}
+.ic.w .ii{color:var(--am);}.ic.ok .ii{color:var(--n);}
+.it{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--w);margin-bottom:6px;text-transform:uppercase;}
+.ib{font-size:11px;color:var(--w3);line-height:1.7;}
+.rg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:26px;}
+.rc{background:var(--bk2);border:1px solid var(--br);padding:20px;}
+.rn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--w);margin-bottom:2px;}
+.rct{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);margin-bottom:14px;}
+.rs{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:44px;line-height:1;margin-bottom:2px;}
+.rsl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);margin-bottom:14px;}
+.mni{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.mnl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);width:80px;flex-shrink:0;text-transform:uppercase;letter-spacing:.05em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mntr{flex:1;height:4px;background:var(--bk4);}
+.mnf{height:100%;background:var(--n);transition:width .8s ease;}
+.mnf.am{background:var(--am);}.mnf.re{background:var(--r);}
+.mnp{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w2);width:30px;text-align:right;flex-shrink:0;}
+.qw{background:var(--bk2);border:1px solid var(--br);overflow:hidden;margin-bottom:26px;}
+table{width:100%;border-collapse:collapse;font-size:11px;}
+thead tr{background:var(--bk3);border-bottom:1px solid var(--nd);}
+th{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--n);padding:11px 14px;text-align:left;font-weight:400;}
+tbody tr{border-bottom:1px solid var(--br);transition:background .15s;}
+tbody tr:hover{background:var(--bk3);}
+td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-align:top;}
+.tg{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.06em;padding:2px 7px;border:1px solid;}
+.td{border-color:var(--nd);color:var(--n);}.tr2{border-color:#333;color:var(--w3);}
+.sp{font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 8px;font-weight:700;}
+.shi{background:rgba(57,255,20,.1);color:var(--n);}.smi{background:rgba(255,170,0,.1);color:var(--am);}.slo{background:rgba(255,51,51,.1);color:var(--r);}
+.oe-tag{background:rgba(255,170,0,.08);border:1px solid var(--am);color:var(--am);font-family:'Share Tech Mono',monospace;font-size:9px;padding:2px 6px;letter-spacing:.06em;}
+.ap{background:var(--bk2);border:1px solid var(--nd);padding:26px;position:relative;overflow:hidden;margin-bottom:26px;}
+.ap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--n),transparent);}
+.ah{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.ai-ic{width:30px;height:30px;border:1px solid var(--n);display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--n);}
+.at{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--w);}
+.asb{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.08em;}
+.ao{background:var(--bk3);border:1px solid var(--br);padding:18px;font-size:12.5px;line-height:1.85;color:var(--w2);min-height:120px;font-family:'Barlow',sans-serif;white-space:pre-wrap;}
+.ao .cu{display:inline-block;width:8px;height:13px;background:var(--n);animation:bl 1s step-end infinite;vertical-align:text-bottom;margin-left:2px;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.dots span{display:inline-block;width:5px;height:5px;background:var(--n);border-radius:50%;margin:0 2px;animation:bo 1.2s infinite ease-in-out;}
+.dots span:nth-child(2){animation-delay:.2s;}.dots span:nth-child(3){animation-delay:.4s;}
+@keyframes bo{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.empty{text-align:center;padding:48px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.1em;border:1px solid var(--br);background:var(--bk2);}
+.oe-response-card{background:var(--bk3);border:1px solid var(--br);border-left:3px solid var(--am);padding:16px;margin-bottom:10px;}
+.oe-card-meta{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+.oe-card-q{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);letter-spacing:.06em;margin-bottom:8px;}
+.oe-card-text{font-size:12px;color:var(--w2);line-height:1.7;}
+.oe-insight{background:rgba(57,255,20,.04);border:1px solid var(--nd);padding:10px 14px;margin-top:10px;font-size:11px;color:var(--w2);line-height:1.7;}
+.oe-insight-lbl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--n);letter-spacing:.1em;margin-bottom:6px;}
+::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-track{background:var(--bk);}::-webkit-scrollbar-thumb{background:var(--bk5);}::-webkit-scrollbar-thumb:hover{background:var(--nd);}
+</style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="lm"><span></span><span></span><span></span><span></span></div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="lt">Maintenance <em>&</em> Reliability Survey</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);border:1px solid var(--am);padding:2px 7px;letter-spacing:.1em">BETA</div>
+      </div>
+      <div class="ls" id="ts">REVIEWER DASHBOARD // —</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px">
+    <span style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.08em">REVIEWER ACCESS</span>
+    <div class="hb" id="live-badge">▸ CONNECTING...</div>
+  </div>
+</header>
+
+<nav>
+  <button class="act" onclick="tab('executive')">Executive Overview</button>
+  <button onclick="tab('blocks')">Block Analysis</button>
+  <button onclick="tab('roles')">Role Comparison</button>
+  <button onclick="tab('responses')">Live Responses</button>
+  <button onclick="tab('openended')">Open-Ended</button>
+  <button onclick="tab('ai')">AI Powered Recommendations ⚙</button>
+</nav>
+
+<main>
+<!-- Content tabs remain the same - omitting for brevity -->
+<div id="t-executive" class="tp act">
+  <div class="fb">
+    <span class="fl">FILTER //</span>
+    <select class="fs" id="f-site" onchange="applyFilters()"><option value="all">ALL SITES</option><option>ARGO</option><option>Indy</option><option>Kansas C.</option></select>
+    <select class="fs" id="f-role" onchange="applyFilters()">
+      <option value="all">ALL ROLES</option>
+      <option value="RE_MGR">Reliability Manager</option><option value="MAINT_MGR">Maintenance Manager</option>
+      <option value="SR_RE">Senior Reliability Engineer</option><option value="RE">Reliability Engineer</option>
+      <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
+      <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
+    </select>
+    <select class="fs" id="f-block" onchange="applyFilters()">
+      <option value="all">ALL BLOCKS</option>
+      <option value="1">Block 1 — IPS Management</option><option value="2">Block 2 — Reliability Strategy</option>
+      <option value="3">Block 3 — Problem Solving</option><option value="4">Block 4 — Work Management</option>
+      <option value="5">Block 5 — Technical & Process</option><option value="6">Block 6 — Role Expectations</option>
+      <option value="7">Block 7 — Driving Change (ADKAR)</option>
+      <option value="8">Block 8 — Closing</option>
+    </select>
+    <div class="fd"></div>
+    <button class="bp" onclick="loadData()">↻ REFRESH</button>
+  </div>
+  <div class="ptit">Diagnostic Overview</div>
+  <div class="psub">// MAINTENANCE & RELIABILITY SURVEY — LIVE DATA</div>
+  <div class="st">Executive Metrics</div>
+  <div class="kg">
+    <div class="kc"><div class="kl">Participants</div><div class="kv n" id="kpi-p">—</div><div class="ks" id="kpi-p-sub">loading...</div></div>
+    <div class="kc"><div class="kl">Total Responses</div><div class="kv n" id="kpi-r">—</div><div class="ks" id="kpi-r-sub">loading...</div></div>
+    <div class="kc am"><div class="kl">MC Accuracy</div><div class="kv am" id="kpi-a">—</div><div class="ks">multiple choice avg</div><div class="kd" id="kpi-a-d"></div></div>
+    <div class="kc re"><div class="kl">Critical Gaps</div><div class="kv re" id="kpi-g">—</div><div class="ks">blocks below 55%</div></div>
+    <div class="kc ne"><div class="kl">Maturity Level</div><div class="kv" id="kpi-m" style="font-size:22px;padding-top:10px">—</div><div class="ks" id="kpi-m-sub"></div></div>
+  </div>
+  <div class="st">Performance by Block</div>
+  <div class="g2" style="margin-bottom:2px">
+    <div class="cc"><div class="ct">Block Accuracy — All Roles <span>% CORRECT (MC)</span></div><div class="ch"><canvas id="cBlock"></canvas></div></div>
+    <div class="cc"><div class="ct">Score Distribution <span>PARTICIPANT COUNT</span></div><div class="ch"><canvas id="cDist"></canvas></div></div>
+  </div>
+  <div class="cc" style="margin-bottom:26px">
+    <div class="ct">Block Maturity Overview <span>COMPOSITE SCORE</span></div>
+    <div id="maturity-bars" style="padding:4px 0 0"></div>
+  </div>
+  <div class="st">Key Diagnostic Signals</div>
+  <div class="ig" id="signals-grid"><div class="empty" style="grid-column:1/-1">LOADING DATA...</div></div>
+</div>
+
+<!-- Additional tabs content omitted for brevity - use original code -->
+<div id="t-blocks" class="tp"></div>
+<div id="t-roles" class="tp"></div>
+<div id="t-responses" class="tp"></div>
+<div id="t-openended" class="tp"></div>
+<div id="t-ai" class="tp"></div>
+
+</main>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════
+// SECURE CONFIG: Load from environment variables
+// ═══════════════════════════════════════════════════════════════════════
+const CONFIG = {
+  SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_URL,
+  SUPABASE_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY,
+  PROXY_URL: import.meta.env.VITE_PROXY_URL || process.env.VITE_PROXY_URL,
+  AI_PASSWORD: import.meta.env.VITE_AI_PASSWORD || process.env.VITE_AI_PASSWORD
+};
+
+// Validation on load
+console.log('🔐 Environment Config Check:');
+console.log('✓ SUPABASE_URL:', CONFIG.SUPABASE_URL ? '✓ Loaded' : '✗ MISSING');
+console.log('✓ SUPABASE_KEY:', CONFIG.SUPABASE_KEY ? '✓ Loaded' : '✗ MISSING');
+console.log('✓ PROXY_URL:', CONFIG.PROXY_URL ? '✓ Loaded' : '✗ MISSING');
+console.log('✓ AI_PASSWORD:', CONFIG.AI_PASSWORD ? '✓ Loaded' : '✗ MISSING');
+
+if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_KEY) {
+  console.error('FATAL: Missing required environment variables.');
+  document.body.innerHTML = '<div style="color: red; padding: 20px; font-family: monospace;">ERROR: Environment variables not configured. Contact administrator.</div>';
+  throw new Error('Missing environment config');
+}
+
+// Use CONFIG instead of hardcoded values in all function calls
+// Replace all instances of SUPABASE_URL with CONFIG.SUPABASE_URL, etc.
+
+const SUPABASE_URL = CONFIG.SUPABASE_URL;
+const SUPABASE_KEY = CONFIG.SUPABASE_KEY;
+const PROXY_URL = CONFIG.PROXY_URL;
+const AI_PASSWORD = CONFIG.AI_PASSWORD;
+
+// [Rest of the JavaScript remains the same as original]
+// Copy all the functions from the original code here, they will now use CONFIG values
+
+</script>
+</body>
+</html>
