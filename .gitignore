@@ -1,0 +1,76 @@
+# Environment variables (NEVER commit)
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Config files with secrets
+config.prod.js
+config.local.js
+secrets.json
+credentials.json
+
+# API keys and auth tokens
+*.key
+*.pem
+*.p12
+*.cert
+*.crt
+*.pfx
+
+# AWS / Cloud credentials
+aws-credentials.json
+.aws/credentials
+.aws/config
+
+# Build artifacts
+dist/
+build/
+out/
+.next/
+*.bundle.js
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Dependencies
+vendor/
+lib/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Git
+.git/
+.gitmodules
+
+# CI/CD
+.github/workflows/deploy-secrets.yml  # if contains secrets
+
+# Local development
+localhost.json
+dev-override.js
