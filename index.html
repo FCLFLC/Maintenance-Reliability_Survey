@@ -1,13 +1,3 @@
-<!-- 
-SECURE VERSION - Uses environment variables instead of hardcoded keys
-Deploy with: npm run build (or equivalent build tool)
-Requires .env file with:
-  VITE_SUPABASE_URL=https://your-company.supabase.co
-  VITE_SUPABASE_ANON_KEY=your_anon_key
-  VITE_PROXY_URL=https://your-company.supabase.co/functions/v1/claude-proxy
-  VITE_AI_PASSWORD=secure_password_here
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +6,6 @@ Requires .env file with:
 <title>Maintenance & Reliability Survey — Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-/* [All CSS remains the same - copy from original] */
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap');
 :root{--bk:#080808;--bk2:#111;--bk3:#181818;--bk4:#222;--bk5:#2a2a2a;--w:#f0f0f0;--w2:#c0c0c0;--w3:#666;--n:#39ff14;--nd:#1c7a08;--r:#ff3333;--am:#ffaa00;--br:#252525;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -60,7 +49,7 @@ select.fs:hover{border-color:var(--nd);}
 .cc{background:var(--bk2);border:1px solid var(--br);padding:22px;}
 .ct{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--w2);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
 .ct span{font-family:'Share Tech Mono',monospace;font-weight:400;font-size:9px;color:var(--w3);}
-.ch{position:relative;height:210px;}.cht{position:relative;height:290px;}
+.ch{position:relative;height:210px;}
 .mr{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
 .mn{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--w2);width:220px;flex-shrink:0;}
 .mt{flex:1;height:9px;background:var(--bk4);border:1px solid var(--br);}
@@ -76,49 +65,7 @@ select.fs:hover{border-color:var(--nd);}
 .ic.w .ii{color:var(--am);}.ic.ok .ii{color:var(--n);}
 .it{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--w);margin-bottom:6px;text-transform:uppercase;}
 .ib{font-size:11px;color:var(--w3);line-height:1.7;}
-.rg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:26px;}
-.rc{background:var(--bk2);border:1px solid var(--br);padding:20px;}
-.rn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--w);margin-bottom:2px;}
-.rct{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);margin-bottom:14px;}
-.rs{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:44px;line-height:1;margin-bottom:2px;}
-.rsl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);margin-bottom:14px;}
-.mni{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
-.mnl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);width:80px;flex-shrink:0;text-transform:uppercase;letter-spacing:.05em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.mntr{flex:1;height:4px;background:var(--bk4);}
-.mnf{height:100%;background:var(--n);transition:width .8s ease;}
-.mnf.am{background:var(--am);}.mnf.re{background:var(--r);}
-.mnp{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w2);width:30px;text-align:right;flex-shrink:0;}
-.qw{background:var(--bk2);border:1px solid var(--br);overflow:hidden;margin-bottom:26px;}
-table{width:100%;border-collapse:collapse;font-size:11px;}
-thead tr{background:var(--bk3);border-bottom:1px solid var(--nd);}
-th{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--n);padding:11px 14px;text-align:left;font-weight:400;}
-tbody tr{border-bottom:1px solid var(--br);transition:background .15s;}
-tbody tr:hover{background:var(--bk3);}
-td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-align:top;}
-.tg{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.06em;padding:2px 7px;border:1px solid;}
-.td{border-color:var(--nd);color:var(--n);}.tr2{border-color:#333;color:var(--w3);}
-.sp{font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 8px;font-weight:700;}
-.shi{background:rgba(57,255,20,.1);color:var(--n);}.smi{background:rgba(255,170,0,.1);color:var(--am);}.slo{background:rgba(255,51,51,.1);color:var(--r);}
-.oe-tag{background:rgba(255,170,0,.08);border:1px solid var(--am);color:var(--am);font-family:'Share Tech Mono',monospace;font-size:9px;padding:2px 6px;letter-spacing:.06em;}
-.ap{background:var(--bk2);border:1px solid var(--nd);padding:26px;position:relative;overflow:hidden;margin-bottom:26px;}
-.ap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--n),transparent);}
-.ah{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-.ai-ic{width:30px;height:30px;border:1px solid var(--n);display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--n);}
-.at{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--w);}
-.asb{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.08em;}
-.ao{background:var(--bk3);border:1px solid var(--br);padding:18px;font-size:12.5px;line-height:1.85;color:var(--w2);min-height:120px;font-family:'Barlow',sans-serif;white-space:pre-wrap;}
-.ao .cu{display:inline-block;width:8px;height:13px;background:var(--n);animation:bl 1s step-end infinite;vertical-align:text-bottom;margin-left:2px;}
-@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
-.dots span{display:inline-block;width:5px;height:5px;background:var(--n);border-radius:50%;margin:0 2px;animation:bo 1.2s infinite ease-in-out;}
-.dots span:nth-child(2){animation-delay:.2s;}.dots span:nth-child(3){animation-delay:.4s;}
-@keyframes bo{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
 .empty{text-align:center;padding:48px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.1em;border:1px solid var(--br);background:var(--bk2);}
-.oe-response-card{background:var(--bk3);border:1px solid var(--br);border-left:3px solid var(--am);padding:16px;margin-bottom:10px;}
-.oe-card-meta{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
-.oe-card-q{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);letter-spacing:.06em;margin-bottom:8px;}
-.oe-card-text{font-size:12px;color:var(--w2);line-height:1.7;}
-.oe-insight{background:rgba(57,255,20,.04);border:1px solid var(--nd);padding:10px 14px;margin-top:10px;font-size:11px;color:var(--w2);line-height:1.7;}
-.oe-insight-lbl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--n);letter-spacing:.1em;margin-bottom:6px;}
 ::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-track{background:var(--bk);}::-webkit-scrollbar-thumb{background:var(--bk5);}::-webkit-scrollbar-thumb:hover{background:var(--nd);}
 </style>
 </head>
@@ -130,7 +77,7 @@ td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-al
     <div>
       <div style="display:flex;align-items:center;gap:10px">
         <div class="lt">Maintenance <em>&</em> Reliability Survey</div>
-        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);border:1px solid var(--am);padding:2px 7px;letter-spacing:.1em">BETA</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);border:1px solid var(--am);padding:2px 7px;letter-spacing:.1em">LIVE</div>
       </div>
       <div class="ls" id="ts">REVIEWER DASHBOARD // —</div>
     </div>
@@ -143,15 +90,11 @@ td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-al
 
 <nav>
   <button class="act" onclick="tab('executive')">Executive Overview</button>
-  <button onclick="tab('blocks')">Block Analysis</button>
-  <button onclick="tab('roles')">Role Comparison</button>
   <button onclick="tab('responses')">Live Responses</button>
-  <button onclick="tab('openended')">Open-Ended</button>
-  <button onclick="tab('ai')">AI Powered Recommendations ⚙</button>
 </nav>
 
 <main>
-<!-- Content tabs remain the same - omitting for brevity -->
+
 <div id="t-executive" class="tp act">
   <div class="fb">
     <span class="fl">FILTER //</span>
@@ -163,14 +106,6 @@ td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-al
       <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
       <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
     </select>
-    <select class="fs" id="f-block" onchange="applyFilters()">
-      <option value="all">ALL BLOCKS</option>
-      <option value="1">Block 1 — IPS Management</option><option value="2">Block 2 — Reliability Strategy</option>
-      <option value="3">Block 3 — Problem Solving</option><option value="4">Block 4 — Work Management</option>
-      <option value="5">Block 5 — Technical & Process</option><option value="6">Block 6 — Role Expectations</option>
-      <option value="7">Block 7 — Driving Change (ADKAR)</option>
-      <option value="8">Block 8 — Closing</option>
-    </select>
     <div class="fd"></div>
     <button class="bp" onclick="loadData()">↻ REFRESH</button>
   </div>
@@ -181,66 +116,173 @@ td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-al
     <div class="kc"><div class="kl">Participants</div><div class="kv n" id="kpi-p">—</div><div class="ks" id="kpi-p-sub">loading...</div></div>
     <div class="kc"><div class="kl">Total Responses</div><div class="kv n" id="kpi-r">—</div><div class="ks" id="kpi-r-sub">loading...</div></div>
     <div class="kc am"><div class="kl">MC Accuracy</div><div class="kv am" id="kpi-a">—</div><div class="ks">multiple choice avg</div><div class="kd" id="kpi-a-d"></div></div>
-    <div class="kc re"><div class="kl">Critical Gaps</div><div class="kv re" id="kpi-g">—</div><div class="ks">blocks below 55%</div></div>
+    <div class="kc re"><div class="kl">Critical Gaps</div><div class="kv re" id="kpi-g">—</div><div class="ks">blocks below 70%</div></div>
     <div class="kc ne"><div class="kl">Maturity Level</div><div class="kv" id="kpi-m" style="font-size:22px;padding-top:10px">—</div><div class="ks" id="kpi-m-sub"></div></div>
   </div>
-  <div class="st">Performance by Block</div>
-  <div class="g2" style="margin-bottom:2px">
-    <div class="cc"><div class="ct">Block Accuracy — All Roles <span>% CORRECT (MC)</span></div><div class="ch"><canvas id="cBlock"></canvas></div></div>
-    <div class="cc"><div class="ct">Score Distribution <span>PARTICIPANT COUNT</span></div><div class="ch"><canvas id="cDist"></canvas></div></div>
-  </div>
-  <div class="cc" style="margin-bottom:26px">
-    <div class="ct">Block Maturity Overview <span>COMPOSITE SCORE</span></div>
-    <div id="maturity-bars" style="padding:4px 0 0"></div>
-  </div>
-  <div class="st">Key Diagnostic Signals</div>
-  <div class="ig" id="signals-grid"><div class="empty" style="grid-column:1/-1">LOADING DATA...</div></div>
 </div>
 
-<!-- Additional tabs content omitted for brevity - use original code -->
-<div id="t-blocks" class="tp"></div>
-<div id="t-roles" class="tp"></div>
-<div id="t-responses" class="tp"></div>
-<div id="t-openended" class="tp"></div>
-<div id="t-ai" class="tp"></div>
+<div id="t-responses" class="tp">
+  <div class="ptit">Live Responses</div>
+  <div class="psub">// ALL RESPONSES — REAL-TIME FROM DATABASE</div>
+  <div class="fb" style="margin-bottom:14px">
+    <select class="fs" id="r-site" onchange="renderResponses()"><option value="all">ALL SITES</option><option>ARGO</option><option>Indy</option><option>Kansas C.</option></select>
+    <select class="fs" id="r-role" onchange="renderResponses()">
+      <option value="all">ALL ROLES</option>
+      <option value="RE_MGR">Reliability Manager</option><option value="MAINT_MGR">Maintenance Manager</option>
+      <option value="SR_RE">Senior Reliability Engineer</option><option value="RE">Reliability Engineer</option>
+      <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
+      <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
+    </select>
+  </div>
+  <div class="cc">
+    <table style="font-size:10px">
+      <thead><tr><th>Participant</th><th>Site</th><th>Role</th><th>Block</th><th>Response</th><th>Status</th><th>Date</th></tr></thead>
+      <tbody id="resp-body"><tr><td colspan="7" style="text-align:center;padding:20px">Loading...</td></tr></tbody>
+    </table>
+  </div>
+</div>
 
 </main>
 
 <script>
 // ═══════════════════════════════════════════════════════════════════════
-// SECURE CONFIG: Load from environment variables
+// HARDCODED CONFIG - Direct values for GitHub Pages
 // ═══════════════════════════════════════════════════════════════════════
-const CONFIG = {
-  SUPABASE_URL: 'https://eusgheisruambiujvcyd.supabase.co',
-  SUPABASE_KEY: 'sb_publishable_GXBeKDcPIbTzrmY59Zjn3g_14T7mqrM',
- // PROXY_URL: 'https://eusgheisruambiujvcyd.supabase.co/functions/v1/claude-proxy',
- // AI_PASSWORD: 'Getaianalysis'
+const SUPABASE_URL = 'https://eusgheisruambiujvcyd.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_GXBeKDcPIbTzrmY59Zjn3g_14T7mqrM';
+
+const ROLE_LABELS = {
+  RE_MGR: 'Reliability Mgr',
+  MAINT_MGR: 'Maintenance Mgr',
+  SR_RE: 'Sr. RE',
+  RE: 'Reliability Engr',
+  MAINT_SCH: 'Maint. Scheduler',
+  PS_MGR: 'PCM',
+  WHOUSE_MGR: 'Warehouse Mgr',
+  UTL_MGR: 'Utilities Mgr'
 };
 
-// Validation on load
-console.log('🔐 Environment Config Check:');
-console.log('✓ SUPABASE_URL:', CONFIG.SUPABASE_URL ? '✓ Loaded' : '✗ MISSING');
-console.log('✓ SUPABASE_KEY:', CONFIG.SUPABASE_KEY ? '✓ Loaded' : '✗ MISSING');
-console.log('✓ PROXY_URL:', CONFIG.PROXY_URL ? '✓ Loaded' : '✗ MISSING');
-console.log('✓ AI_PASSWORD:', CONFIG.AI_PASSWORD ? '✓ Loaded' : '✗ MISSING');
+const BLOCK_NAMES = {
+  1: 'IPS Management',
+  2: 'Reliability Strategy',
+  3: 'Problem Solving',
+  4: 'Work Management',
+  5: 'Technical & Process',
+  6: 'Role Expectations',
+  7: 'Driving Change',
+  8: 'Closing'
+};
 
-if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_KEY) {
-  console.error('FATAL: Missing required environment variables.');
-  document.body.innerHTML = '<div style="color: red; padding: 20px; font-family: monospace;">ERROR: Environment variables not configured. Contact administrator.</div>';
-  throw new Error('Missing environment config');
+let ALL_DATA = [];
+let FILTERED = [];
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  const d = new Date();
+  document.getElementById('ts').textContent = 'REVIEWER DASHBOARD // ' + d.toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+  loadData();
+  setInterval(loadData, 60000);
+});
+
+async function sbFetch(path) {
+  try {
+    const r = await fetch(SUPABASE_URL + path, {
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY
+      }
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } catch (e) {
+    console.error('Fetch error:', e);
+    return [];
+  }
 }
 
-// Use CONFIG instead of hardcoded values in all function calls
-// Replace all instances of SUPABASE_URL with CONFIG.SUPABASE_URL, etc.
+async function loadData() {
+  document.getElementById('live-badge').textContent = '▸ SYNCING...';
+  try {
+    ALL_DATA = await sbFetch('/rest/v1/responses?select=*&order=submitted_at.desc&limit=10000');
+    document.getElementById('live-badge').textContent = '▸ LIVE — ' + ALL_DATA.length + ' RECORDS';
+    applyFilters();
+  } catch (e) {
+    document.getElementById('live-badge').textContent = '▸ ERROR';
+    console.error('Load error:', e);
+  }
+}
 
-const SUPABASE_URL = CONFIG.SUPABASE_URL;
-const SUPABASE_KEY = CONFIG.SUPABASE_KEY;
-const PROXY_URL = CONFIG.PROXY_URL;
-const AI_PASSWORD = CONFIG.AI_PASSWORD;
+function applyFilters() {
+  const site = document.getElementById('f-site').value;
+  const role = document.getElementById('f-role').value;
+  FILTERED = ALL_DATA.filter(r => {
+    if (site !== 'all' && r.site !== site) return false;
+    if (role !== 'all' && r.role_code !== role) return false;
+    return true;
+  });
+  renderDashboard();
+}
 
-// [Rest of the JavaScript remains the same as original]
-// Copy all the functions from the original code here, they will now use CONFIG values
+function renderDashboard() {
+  if (!FILTERED.length) {
+    document.getElementById('kpi-p').textContent = '0';
+    document.getElementById('kpi-r').textContent = '0';
+    document.getElementById('kpi-a').textContent = '—';
+    document.getElementById('kpi-g').textContent = '—';
+    document.getElementById('kpi-m').textContent = 'NO DATA';
+    return;
+  }
 
+  const mc = FILTERED.filter(r => r.question_type === 'multiple_choice');
+  const participants = [...new Set(FILTERED.map(r => r.participant_name))];
+  const correct = mc.filter(r => r.is_correct).length;
+  const accuracy = mc.length ? Math.round((correct / mc.length) * 100) : 0;
+
+  document.getElementById('kpi-p').textContent = participants.length;
+  document.getElementById('kpi-p-sub').textContent = 'unique participants';
+  document.getElementById('kpi-r').textContent = FILTERED.length;
+  document.getElementById('kpi-r-sub').textContent = mc.length + ' responses';
+  
+  const ae = document.getElementById('kpi-a');
+  ae.textContent = accuracy + '%';
+  ae.className = 'kv ' + (accuracy >= 90 ? 'n' : accuracy >= 70 ? 'am' : 're');
+  
+  document.getElementById('kpi-m').textContent = accuracy >= 70 ? 'DEVELOPING' : 'REACTIVE';
+  document.getElementById('kpi-m-sub').textContent = accuracy >= 70 ? 'Level 2 / 3' : 'Level 1 / 3';
+
+  renderResponses();
+}
+
+function renderResponses() {
+  const site = document.getElementById('r-site').value;
+  const role = document.getElementById('r-role').value;
+  let rows = FILTERED.filter(r => r.question_type === 'multiple_choice');
+  
+  if (site !== 'all') rows = rows.filter(r => r.site === site);
+  if (role !== 'all') rows = rows.filter(r => r.role_code === role);
+
+  const tbody = document.getElementById('resp-body');
+  tbody.innerHTML = !rows.length
+    ? '<tr><td colspan="7" style="text-align:center;padding:20px">No responses</td></tr>'
+    : rows.map(r => `<tr>
+      <td style="font-family:Share Tech Mono">${r.participant_name || '—'}</td>
+      <td>${r.site || '—'}</td>
+      <td>${ROLE_LABELS[r.role_code] || '—'}</td>
+      <td>B${r.block_number || '—'}</td>
+      <td>${r.answer_given || '—'}</td>
+      <td style="color:${r.is_correct ? '#39ff14' : '#ff3333'}">${r.is_correct ? '✓' : '✗'}</td>
+      <td style="font-family:Share Tech Mono;font-size:9px">${r.submitted_at ? new Date(r.submitted_at).toLocaleDateString() : '—'}</td>
+    </tr>`).join('');
+}
+
+const TABS = ['executive', 'responses'];
+function tab(id) {
+  TABS.forEach(t => {
+    document.getElementById('t-' + t).classList.toggle('act', t === id);
+    document.querySelectorAll('nav button')[TABS.indexOf(t)].classList.toggle('act', t === id);
+  });
+}
 </script>
+
 </body>
 </html>
