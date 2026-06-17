@@ -49,7 +49,7 @@ select.fs:hover{border-color:var(--nd);}
 .cc{background:var(--bk2);border:1px solid var(--br);padding:22px;}
 .ct{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--w2);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
 .ct span{font-family:'Share Tech Mono',monospace;font-weight:400;font-size:9px;color:var(--w3);}
-.ch{position:relative;height:210px;}
+.ch{position:relative;height:210px;}.cht{position:relative;height:290px;}
 .mr{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
 .mn{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--w2);width:220px;flex-shrink:0;}
 .mt{flex:1;height:9px;background:var(--bk4);border:1px solid var(--br);}
@@ -65,7 +65,49 @@ select.fs:hover{border-color:var(--nd);}
 .ic.w .ii{color:var(--am);}.ic.ok .ii{color:var(--n);}
 .it{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--w);margin-bottom:6px;text-transform:uppercase;}
 .ib{font-size:11px;color:var(--w3);line-height:1.7;}
+.rg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:26px;}
+.rc{background:var(--bk2);border:1px solid var(--br);padding:20px;}
+.rn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--w);margin-bottom:2px;}
+.rct{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);margin-bottom:14px;}
+.rs{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:44px;line-height:1;margin-bottom:2px;}
+.rsl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);margin-bottom:14px;}
+.mni{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.mnl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);width:80px;flex-shrink:0;text-transform:uppercase;letter-spacing:.05em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mntr{flex:1;height:4px;background:var(--bk4);}
+.mnf{height:100%;background:var(--n);transition:width .8s ease;}
+.mnf.am{background:var(--am);}.mnf.re{background:var(--r);}
+.mnp{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w2);width:30px;text-align:right;flex-shrink:0;}
+.qw{background:var(--bk2);border:1px solid var(--br);overflow:hidden;margin-bottom:26px;}
+table{width:100%;border-collapse:collapse;font-size:11px;}
+thead tr{background:var(--bk3);border-bottom:1px solid var(--nd);}
+th{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--n);padding:11px 14px;text-align:left;font-weight:400;}
+tbody tr{border-bottom:1px solid var(--br);transition:background .15s;}
+tbody tr:hover{background:var(--bk3);}
+td{padding:11px 14px;color:var(--w2);font-family:'Barlow',sans-serif;vertical-align:top;}
+.tg{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.06em;padding:2px 7px;border:1px solid;}
+.td{border-color:var(--nd);color:var(--n);}.tr2{border-color:#333;color:var(--w3);}
+.sp{font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 8px;font-weight:700;}
+.shi{background:rgba(57,255,20,.1);color:var(--n);}.smi{background:rgba(255,170,0,.1);color:var(--am);}.slo{background:rgba(255,51,51,.1);color:var(--r);}
+.oe-tag{background:rgba(255,170,0,.08);border:1px solid var(--am);color:var(--am);font-family:'Share Tech Mono',monospace;font-size:9px;padding:2px 6px;letter-spacing:.06em;}
+.ap{background:var(--bk2);border:1px solid var(--nd);padding:26px;position:relative;overflow:hidden;margin-bottom:26px;}
+.ap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--n),transparent);}
+.ah{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.ai-ic{width:30px;height:30px;border:1px solid var(--n);display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--n);}
+.at{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--w);}
+.asb{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.08em;}
+.ao{background:var(--bk3);border:1px solid var(--br);padding:18px;font-size:12.5px;line-height:1.85;color:var(--w2);min-height:120px;font-family:'Barlow',sans-serif;white-space:pre-wrap;}
+.ao .cu{display:inline-block;width:8px;height:13px;background:var(--n);animation:bl 1s step-end infinite;vertical-align:text-bottom;margin-left:2px;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.dots span{display:inline-block;width:5px;height:5px;background:var(--n);border-radius:50%;margin:0 2px;animation:bo 1.2s infinite ease-in-out;}
+.dots span:nth-child(2){animation-delay:.2s;}.dots span:nth-child(3){animation-delay:.4s;}
+@keyframes bo{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
 .empty{text-align:center;padding:48px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.1em;border:1px solid var(--br);background:var(--bk2);}
+.oe-response-card{background:var(--bk3);border:1px solid var(--br);border-left:3px solid var(--am);padding:16px;margin-bottom:10px;}
+.oe-card-meta{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+.oe-card-q{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);letter-spacing:.06em;margin-bottom:8px;}
+.oe-card-text{font-size:12px;color:var(--w2);line-height:1.7;}
+.oe-insight{background:rgba(57,255,20,.04);border:1px solid var(--nd);padding:10px 14px;margin-top:10px;font-size:11px;color:var(--w2);line-height:1.7;}
+.oe-insight-lbl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--n);letter-spacing:.1em;margin-bottom:6px;}
 ::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-track{background:var(--bk);}::-webkit-scrollbar-thumb{background:var(--bk5);}::-webkit-scrollbar-thumb:hover{background:var(--nd);}
 </style>
 </head>
@@ -77,7 +119,7 @@ select.fs:hover{border-color:var(--nd);}
     <div>
       <div style="display:flex;align-items:center;gap:10px">
         <div class="lt">Maintenance <em>&</em> Reliability Survey</div>
-        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);border:1px solid var(--am);padding:2px 7px;letter-spacing:.1em">LIVE</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--am);border:1px solid var(--am);padding:2px 7px;letter-spacing:.1em">BETA</div>
       </div>
       <div class="ls" id="ts">REVIEWER DASHBOARD // —</div>
     </div>
@@ -90,11 +132,16 @@ select.fs:hover{border-color:var(--nd);}
 
 <nav>
   <button class="act" onclick="tab('executive')">Executive Overview</button>
+  <button onclick="tab('blocks')">Block Analysis</button>
+  <button onclick="tab('roles')">Role Comparison</button>
   <button onclick="tab('responses')">Live Responses</button>
+  <button onclick="tab('openended')">Open-Ended</button>
+  <button onclick="tab('ai')">AI Powered Recommendations ⚙</button>
 </nav>
 
 <main>
 
+<!-- EXECUTIVE -->
 <div id="t-executive" class="tp act">
   <div class="fb">
     <span class="fl">FILTER //</span>
@@ -106,6 +153,14 @@ select.fs:hover{border-color:var(--nd);}
       <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
       <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
     </select>
+    <select class="fs" id="f-block" onchange="applyFilters()">
+      <option value="all">ALL BLOCKS</option>
+      <option value="1">Block 1 — IPS Management</option><option value="2">Block 2 — Reliability Strategy</option>
+      <option value="3">Block 3 — Problem Solving</option><option value="4">Block 4 — Work Management</option>
+      <option value="5">Block 5 — Technical & Process</option><option value="6">Block 6 — Role Expectations</option>
+      <option value="7">Block 7 — Driving Change (ADKAR)</option>
+      <option value="8">Block 8 — Closing</option>
+    </select>
     <div class="fd"></div>
     <button class="bp" onclick="loadData()">↻ REFRESH</button>
   </div>
@@ -116,14 +171,74 @@ select.fs:hover{border-color:var(--nd);}
     <div class="kc"><div class="kl">Participants</div><div class="kv n" id="kpi-p">—</div><div class="ks" id="kpi-p-sub">loading...</div></div>
     <div class="kc"><div class="kl">Total Responses</div><div class="kv n" id="kpi-r">—</div><div class="ks" id="kpi-r-sub">loading...</div></div>
     <div class="kc am"><div class="kl">MC Accuracy</div><div class="kv am" id="kpi-a">—</div><div class="ks">multiple choice avg</div><div class="kd" id="kpi-a-d"></div></div>
-    <div class="kc re"><div class="kl">Critical Gaps</div><div class="kv re" id="kpi-g">—</div><div class="ks">blocks below 70%</div></div>
+    <div class="kc re"><div class="kl">Critical Gaps</div><div class="kv re" id="kpi-g">—</div><div class="ks">blocks below 55%</div></div>
     <div class="kc ne"><div class="kl">Maturity Level</div><div class="kv" id="kpi-m" style="font-size:22px;padding-top:10px">—</div><div class="ks" id="kpi-m-sub"></div></div>
+  </div>
+  <div class="st">Performance by Block</div>
+  <div class="g2" style="margin-bottom:2px">
+    <div class="cc"><div class="ct">Block Accuracy — All Roles <span>% CORRECT (MC)</span></div><div class="ch"><canvas id="cBlock"></canvas></div></div>
+    <div class="cc"><div class="ct">Score Distribution <span>PARTICIPANT COUNT</span></div><div class="ch"><canvas id="cDist"></canvas></div></div>
+  </div>
+  <div class="cc" style="margin-bottom:26px">
+    <div class="ct">Block Maturity Overview <span>COMPOSITE SCORE</span></div>
+    <div id="maturity-bars" style="padding:4px 0 0"></div>
+  </div>
+  <div class="st">Key Diagnostic Signals</div>
+  <div class="ig" id="signals-grid"><div class="empty" style="grid-column:1/-1">LOADING DATA...</div></div>
+</div>
+
+<!-- BLOCKS -->
+<div id="t-blocks" class="tp">
+  <div class="ptit">Block Analysis</div>
+  <div class="psub">// PERFORMANCE BY BLOCK — BROKEN DOWN BY CATEGORY</div>
+  <div class="fb">
+    <span class="fl">FILTER //</span>
+    <select class="fs" id="b-site" onchange="applyBlockFilters()"><option value="all">ALL SITES</option><option>ARGO</option><option>Indy</option><option>Kansas C.</option></select>
+    <select class="fs" id="b-role" onchange="applyBlockFilters()">
+      <option value="all">ALL ROLES</option>
+      <option value="RE_MGR">Reliability Manager</option><option value="MAINT_MGR">Maintenance Manager</option>
+      <option value="SR_RE">Senior Reliability Engineer</option><option value="RE">Reliability Engineer</option>
+      <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
+      <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
+    </select>
+    <select class="fs" id="b-block" onchange="applyBlockFilters()">
+      <option value="all">ALL BLOCKS</option>
+      <option value="1">Block 1 — IPS Management</option><option value="2">Block 2 — Reliability Strategy</option>
+      <option value="3">Block 3 — Problem Solving</option><option value="4">Block 4 — Work Management</option>
+      <option value="5">Block 5 — Technical & Process</option><option value="6">Block 6 — Role Expectations</option>
+      <option value="7">Block 7 — Driving Change (ADKAR)</option>
+    </select>
+    <div class="fd"></div>
+    <button class="bp" onclick="applyBlockFilters()">↻ REFRESH</button>
+  </div>
+  <div class="g3" style="margin-bottom:2px">
+    <div class="cc"><div class="ct">Block 1 — IPS Management <span>BY CATEGORY</span></div><div class="ch"><canvas id="cB1"></canvas></div></div>
+    <div class="cc"><div class="ct">Block 2 — Reliability Strategy <span>BY CATEGORY</span></div><div class="ch"><canvas id="cB2"></canvas></div></div>
+    <div class="cc"><div class="ct">Block 3 — Problem Solving <span>BY CATEGORY</span></div><div class="ch"><canvas id="cB3"></canvas></div></div>
+  </div>
+  <div class="g3" style="margin-bottom:26px">
+    <div class="cc"><div class="ct">Block 4 — Work Management <span>BY CATEGORY</span></div><div class="ch"><canvas id="cB4"></canvas></div></div>
+    <div class="cc"><div class="ct">Block 5 — Technical & Process <span>BY CATEGORY</span></div><div class="ch"><canvas id="cB5"></canvas></div></div>
+    <div class="cc"><div class="ct">Block 6 — Role Expectations <span>BY CATEGORY</span></div><div class="ch"><canvas id="cB6"></canvas></div></div>
   </div>
 </div>
 
+<!-- ROLES -->
+<div id="t-roles" class="tp">
+  <div class="ptit">Role Comparison</div>
+  <div class="psub">// DIAGNOSTIC RESULTS BY ROLE</div>
+  <div class="rg" id="role-cards"><div class="empty" style="grid-column:1/-1">LOADING...</div></div>
+  <div class="st">Cross-Role Radar</div>
+  <div class="cc" style="margin-bottom:26px">
+    <div class="ct">Block Performance by Role <span>% ACCURACY</span></div>
+    <div class="cht"><canvas id="cRadar"></canvas></div>
+  </div>
+</div>
+
+<!-- LIVE RESPONSES -->
 <div id="t-responses" class="tp">
   <div class="ptit">Live Responses</div>
-  <div class="psub">// ALL RESPONSES — REAL-TIME FROM DATABASE</div>
+  <div class="psub">// ALL MC RESPONSES — REAL-TIME FROM DATABASE</div>
   <div class="fb" style="margin-bottom:14px">
     <select class="fs" id="r-site" onchange="renderResponses()"><option value="all">ALL SITES</option><option>ARGO</option><option>Indy</option><option>Kansas C.</option></select>
     <select class="fs" id="r-role" onchange="renderResponses()">
@@ -133,156 +248,624 @@ select.fs:hover{border-color:var(--nd);}
       <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
       <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
     </select>
+    <select class="fs" id="r-block" onchange="renderResponses()">
+      <option value="all">ALL BLOCKS</option>
+      <option value="1">Block 1</option><option value="2">Block 2</option><option value="3">Block 3</option>
+      <option value="4">Block 4</option><option value="5">Block 5</option><option value="6">Block 6</option>
+    </select>
+    <select class="fs" id="r-perf" onchange="renderResponses()">
+      <option value="all">ALL SCORES</option>
+      <option value="hi">High (&gt;70%)</option><option value="mid">Medium (55–70%)</option><option value="lo">Low (&lt;55%)</option>
+    </select>
   </div>
-  <div class="cc">
-    <table style="font-size:10px">
-      <thead><tr><th>Participant</th><th>Site</th><th>Role</th><th>Block</th><th>Response</th><th>Status</th><th>Date</th></tr></thead>
-      <tbody id="resp-body"><tr><td colspan="7" style="text-align:center;padding:20px">Loading...</td></tr></tbody>
+  <div class="qw">
+    <table>
+      <thead><tr><th>Code</th><th>Site</th><th>Role</th><th>Block</th><th>Category</th><th>Question ID</th><th>Answer</th><th>Result</th><th>Score</th><th>Date</th></tr></thead>
+      <tbody id="resp-body"></tbody>
     </table>
+  </div>
+</div>
+
+<!-- OPEN-ENDED -->
+<div id="t-openended" class="tp">
+  <div class="ptit">Open-Ended Analysis</div>
+  <div class="psub">// CONSOLIDATED BY ROLE — AI SYNTHESIS PER ROLE &amp; BLOCK</div>
+  <div class="fb" style="margin-bottom:14px">
+    <select class="fs" id="oe-site" onchange="renderOE()"><option value="all">ALL SITES</option><option>ARGO</option><option>Indy</option><option>Kansas C.</option></select>
+    <select class="fs" id="oe-block" onchange="renderOE()">
+      <option value="all">ALL BLOCKS</option>
+      <option value="1">Block 1 — IPS Management</option><option value="2">Block 2 — Reliability Strategy</option>
+      <option value="3">Block 3 — Problem Solving</option><option value="4">Block 4 — Work Management</option>
+      <option value="5">Block 5 — Technical &amp; Process</option><option value="6">Block 6 — Role Expectations</option>
+      <option value="7">Block 7 — Driving Change (ADKAR)</option>
+      <option value="8">Block 8 — Closing</option>
+    </select>
+    <div class="fd"></div>
+    <button class="bp" onclick="runOEAnalysis()">▸ AI SYNTHESIZE BY ROLE</button>
+    <button class="bp" style="background:var(--bk3);color:var(--w3);border:1px solid var(--br)" onclick="toggleRawResponses()">◈ TOGGLE RAW RESPONSES</button>
+  </div>
+  <div style="background:rgba(57,255,20,.04);border:1px solid var(--nd);border-left:3px solid var(--n);padding:10px 16px;margin-bottom:18px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.07em;line-height:1.8">
+    ▸ Each panel below consolidates all open-ended responses for that role into a single AI executive synthesis. Click <strong style="color:var(--n)">AI SYNTHESIZE BY ROLE</strong> to generate. Toggle raw responses to review individual answers beneath each synthesis.
+  </div>
+  <div id="oe-panels"><div class="empty">LOADING OPEN-ENDED RESPONSES...</div></div>
+</div>
+
+<!-- AI -->
+<div id="t-ai" class="tp">
+  <div class="ptit">AI Powered Recommendations</div>
+  <div class="psub">// AI-DRIVEN GAP ANALYSIS &amp; INTERVENTION RECOMMENDATIONS</div>
+  <div style="background:rgba(57,255,20,.04);border:1px solid var(--nd);border-left:4px solid var(--n);padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;">
+    <div style="font-family:'Share Tech Mono',monospace;font-size:18px;color:var(--n)">🔒</div>
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--n);margin-bottom:3px">Password Protected</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3);letter-spacing:.06em">AI analysis requires reviewer authorization. You will be prompted for a password when generating recommendations.</div>
+    </div>
+  </div>
+  <div class="fb" style="margin-bottom:18px">
+    <select class="fs" id="asc">
+      <option value="all">FULL ORGANIZATION</option>
+      <option value="RE_MGR">Reliability Manager</option><option value="MAINT_MGR">Maintenance Manager</option>
+      <option value="SR_RE">Senior Reliability Engineer</option><option value="RE">Reliability Engineer</option>
+      <option value="MAINT_SCH">Maintenance Scheduler</option><option value="PS_MGR">PCM</option>
+      <option value="WHOUSE_MGR">Warehouse Manager</option><option value="UTL_MGR">Utilities Manager</option>
+    </select>
+    <select class="fs" id="afo">
+      <option value="gaps">Gap Identification &amp; Priorities</option>
+      <option value="training">What to Develop Further (Training)</option>
+      <option value="culture">Cultural &amp; Behavioral Assessment</option>
+      <option value="roadmap">Transformation Roadmap</option>
+      <option value="coaching">Coaching Recommendations by Role</option>
+    </select>
+    <div class="fd"></div>
+    <button class="bp" onclick="runAI()">▸ GENERATE ANALYSIS</button>
+  </div>
+  <div class="ap">
+    <div class="ah">
+      <div class="ai-ic">AI</div>
+      <div><div class="at">Diagnostic Intelligence Engine</div><div class="asb">// POWERED BY CLAUDE — ANALYZING REAL PARTICIPANT DATA</div></div>
+    </div>
+    <div class="ao" id="aout">Select scope and focus, then click GENERATE ANALYSIS.<span class="cu"></span></div>
   </div>
 </div>
 
 </main>
 
 <script>
-// ═══════════════════════════════════════════════════════════════════════
-// HARDCODED CONFIG - Direct values for GitHub Pages
-// ═══════════════════════════════════════════════════════════════════════
-const SUPABASE_URL = 'https://eusgheisruambiujvcyd.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_GXBeKDcPIbTzrmY59Zjn3g_14T7mqrM';
+const SUPABASE_URL='https://eusgheisruambiujvcyd.supabase.co';
+const SUPABASE_KEY='sb_publishable_GXBeKDcPIbTzrmY59Zjn3g_14T7mqrM';
+const PROXY_URL='https://eusgheisruambiujvcyd.supabase.co/functions/v1/claude-proxy';
+const AI_PASSWORD='Getaianalysis';
 
-const ROLE_LABELS = {
-  RE_MGR: 'Reliability Mgr',
-  MAINT_MGR: 'Maintenance Mgr',
-  SR_RE: 'Sr. RE',
-  RE: 'Reliability Engr',
-  MAINT_SCH: 'Maint. Scheduler',
-  PS_MGR: 'PCM',
-  WHOUSE_MGR: 'Warehouse Mgr',
-  UTL_MGR: 'Utilities Mgr'
+const ROLE_LABELS={
+  RE_MGR:'Reliability Mgr',
+  MAINT_MGR:'Maintenance Mgr',
+  SR_RE:'Sr. RE',
+  RE:'Reliability Engr',
+  MAINT_SCH:'Maint. Scheduler',
+  PS_MGR:'PCM',
+  WHOUSE_MGR:'Warehouse Mgr',
+  UTL_MGR:'Utilities Mgr'
 };
 
-const BLOCK_NAMES = {
-  1: 'IPS Management',
-  2: 'Reliability Strategy',
-  3: 'Problem Solving',
-  4: 'Work Management',
-  5: 'Technical & Process',
-  6: 'Role Expectations',
-  7: 'Driving Change',
-  8: 'Closing'
-};
+const BLOCK_NAMES={1:'IPS Management',2:'Reliability Strategy',3:'Problem Solving',4:'Work Management',5:'Technical & Process',6:'Role Expectations',7:'Driving Change (ADKAR)',8:'Closing'};
 
-let ALL_DATA = [];
-let FILTERED = [];
+let ALL_DATA=[];
+let FILTERED=[];
+let charts={};
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-  const d = new Date();
-  document.getElementById('ts').textContent = 'REVIEWER DASHBOARD // ' + d.toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'}).toUpperCase();
-  loadData();
-  setInterval(loadData, 60000);
-});
+(()=>{
+  const d=new Date();
+  document.getElementById('ts').textContent='REVIEWER DASHBOARD // '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+})();
 
-async function sbFetch(path) {
-  try {
-    const r = await fetch(SUPABASE_URL + path, {
-      headers: {
-        'apikey': SUPABASE_KEY,
-        'Authorization': 'Bearer ' + SUPABASE_KEY
-      }
-    });
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    return await r.json();
-  } catch (e) {
-    console.error('Fetch error:', e);
-    return [];
-  }
+async function sbFetch(path){
+  const r=await fetch(SUPABASE_URL+path,{headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY}});
+  if(!r.ok) throw new Error('Fetch error '+r.status);
+  return r.json();
 }
 
-async function loadData() {
-  document.getElementById('live-badge').textContent = '▸ SYNCING...';
-  try {
-    ALL_DATA = await sbFetch('/rest/v1/responses?select=*&order=submitted_at.desc&limit=10000');
-    document.getElementById('live-badge').textContent = '▸ LIVE — ' + ALL_DATA.length + ' RECORDS';
+async function loadData(){
+  document.getElementById('live-badge').textContent='▸ SYNCING...';
+  try{
+    ALL_DATA=await sbFetch('/rest/v1/responses?select=*&order=submitted_at.desc&limit=10000');
+    document.getElementById('live-badge').textContent='▸ LIVE — '+ALL_DATA.length+' RECORDS';
     applyFilters();
-  } catch (e) {
-    document.getElementById('live-badge').textContent = '▸ ERROR';
-    console.error('Load error:', e);
+  }catch(e){
+    document.getElementById('live-badge').textContent='▸ ERROR';
+    document.getElementById('live-badge').style.color='var(--r)';
+    console.error(e);
   }
 }
 
-function applyFilters() {
-  const site = document.getElementById('f-site').value;
-  const role = document.getElementById('f-role').value;
-  FILTERED = ALL_DATA.filter(r => {
-    if (site !== 'all' && r.site !== site) return false;
-    if (role !== 'all' && r.role_code !== role) return false;
+function applyFilters(){
+  const site=document.getElementById('f-site').value;
+  const role=document.getElementById('f-role').value;
+  const block=document.getElementById('f-block').value;
+  FILTERED=ALL_DATA.filter(r=>{
+    if(site!=='all'&&r.site!==site) return false;
+    if(role!=='all'&&r.role_code!==role) return false;
+    if(block!=='all'&&String(r.block_number)!==block) return false;
     return true;
   });
   renderDashboard();
 }
 
-function renderDashboard() {
-  if (!FILTERED.length) {
-    document.getElementById('kpi-p').textContent = '0';
-    document.getElementById('kpi-r').textContent = '0';
-    document.getElementById('kpi-a').textContent = '—';
-    document.getElementById('kpi-g').textContent = '—';
-    document.getElementById('kpi-m').textContent = 'NO DATA';
-    return;
-  }
+function getStats(data){
+  if(!data.length) return null;
+  const mc=data.filter(r=>r.question_type==='multiple_choice');
+  const oe=data.filter(r=>r.question_type==='open_ended');
+  const participants=[...new Set(data.map(r=>r.participant_name))];
+  const correct=mc.filter(r=>r.is_correct).length;
+  const accuracy=mc.length?Math.round((correct/mc.length)*100):0;
 
-  const mc = FILTERED.filter(r => r.question_type === 'multiple_choice');
-  const participants = [...new Set(FILTERED.map(r => r.participant_name))];
-  const correct = mc.filter(r => r.is_correct).length;
-  const accuracy = mc.length ? Math.round((correct / mc.length) * 100) : 0;
+  const blockScores={};
+  mc.filter(r=>r.block_number!==7&&r.block_number!==8).forEach(r=>{
+    const b=r.block_number;
+    if(!blockScores[b]) blockScores[b]={correct:0,total:0};
+    blockScores[b].total++;
+    if(r.is_correct) blockScores[b].correct++;
+  });
+  const blockPct={};
+  Object.entries(blockScores).forEach(([b,v])=>blockPct[b]=Math.round((v.correct/v.total)*100));
 
-  document.getElementById('kpi-p').textContent = participants.length;
-  document.getElementById('kpi-p-sub').textContent = 'unique participants';
-  document.getElementById('kpi-r').textContent = FILTERED.length;
-  document.getElementById('kpi-r-sub').textContent = mc.length + ' responses';
-  
-  const ae = document.getElementById('kpi-a');
-  ae.textContent = accuracy + '%';
-  ae.className = 'kv ' + (accuracy >= 90 ? 'n' : accuracy >= 70 ? 'am' : 're');
-  
-  document.getElementById('kpi-m').textContent = accuracy >= 70 ? 'DEVELOPING' : 'REACTIVE';
-  document.getElementById('kpi-m-sub').textContent = accuracy >= 70 ? 'Level 2 / 3' : 'Level 1 / 3';
+  const catByBlock={};
+  mc.filter(r=>r.block_number!==7&&r.block_number!==8).forEach(r=>{
+    const b=r.block_number;
+    const cat=r.category||'Unknown';
+    if(!catByBlock[b]) catByBlock[b]={};
+    if(!catByBlock[b][cat]) catByBlock[b][cat]={correct:0,total:0};
+    catByBlock[b][cat].total++;
+    if(r.is_correct) catByBlock[b][cat].correct++;
+  });
 
-  renderResponses();
+  const roleScores={};
+  mc.forEach(r=>{
+    if(!roleScores[r.role_code]) roleScores[r.role_code]={correct:0,total:0,participants:new Set()};
+    roleScores[r.role_code].total++;
+    if(r.is_correct) roleScores[r.role_code].correct++;
+    roleScores[r.role_code].participants.add(r.participant_name);
+  });
+  const rolePct={};
+  Object.entries(roleScores).forEach(([r,v])=>rolePct[r]={score:Math.round((v.correct/v.total)*100),count:v.participants.size});
+
+  // Per-role, per-block accuracy (fixes role cards and radar showing same numbers)
+  const blockPctByRole={};
+  mc.filter(r=>r.block_number!==7&&r.block_number!==8).forEach(r=>{
+    const role=r.role_code;
+    const b=r.block_number;
+    if(!blockPctByRole[role]) blockPctByRole[role]={};
+    if(!blockPctByRole[role][b]) blockPctByRole[role][b]={correct:0,total:0};
+    blockPctByRole[role][b].total++;
+    if(r.is_correct) blockPctByRole[role][b].correct++;
+  });
+  Object.keys(blockPctByRole).forEach(role=>{
+    Object.keys(blockPctByRole[role]).forEach(b=>{
+      const v=blockPctByRole[role][b];
+      blockPctByRole[role][b]=Math.round((v.correct/v.total)*100);
+    });
+  });
+
+  const pScores={};
+  mc.forEach(r=>{
+    if(!pScores[r.participant_name]) pScores[r.participant_name]={correct:0,total:0};
+    pScores[r.participant_name].total++;
+    if(r.is_correct) pScores[r.participant_name].correct++;
+  });
+  const distBuckets=[0,0,0,0,0,0,0];
+  Object.values(pScores).forEach(v=>{
+    const s=Math.round((v.correct/v.total)*100);
+    if(s<40)distBuckets[0]++;else if(s<50)distBuckets[1]++;else if(s<60)distBuckets[2]++;
+    else if(s<70)distBuckets[3]++;else if(s<80)distBuckets[4]++;else if(s<90)distBuckets[5]++;
+    else distBuckets[6]++;
+  });
+
+  const criticalGaps=Object.values(blockPct).filter(v=>v<70).length;
+  const maturity=accuracy>=90?'OPTIMIZING':accuracy>=70?'DEVELOPING':'REACTIVE';
+  const maturitySub=accuracy>=90?'Level 3 / 3':accuracy>=70?'Level 2 / 3':'Level 1 / 3';
+
+  return{participants,accuracy,blockPct,catByBlock,rolePct,blockPctByRole,criticalGaps,maturity,maturitySub,distBuckets,mc,oe,correct,pScores};
 }
 
-function renderResponses() {
-  const site = document.getElementById('r-site').value;
-  const role = document.getElementById('r-role').value;
-  let rows = FILTERED.filter(r => r.question_type === 'multiple_choice');
-  
-  if (site !== 'all') rows = rows.filter(r => r.site === site);
-  if (role !== 'all') rows = rows.filter(r => r.role_code === role);
+// ── Threshold helpers (red <70, yellow 70–89, green ≥90) ──────────────────
+function scoreColor(p){return p>=90?'var(--n)':p>=70?'var(--am)':'var(--r)';}
+function scoreColorHex(p){return p>=90?'#39ff14':p>=70?'#ffaa00':'#ff3333';}
+function scoreCls(p){return p>=90?'g':p>=70?'am':'re';}  // maps to .mf CSS classes
+function scoreLabelCls(p){return p>=90?'l4':p>=70?'l2':'l1';}
+function scoreLabel(p){return p>=90?'OPTIMIZING':p>=70?'DEVELOPING':'CRITICAL';}
 
-  const tbody = document.getElementById('resp-body');
-  tbody.innerHTML = !rows.length
-    ? '<tr><td colspan="7" style="text-align:center;padding:20px">No responses</td></tr>'
-    : rows.map(r => `<tr>
-      <td style="font-family:Share Tech Mono">${r.participant_name || '—'}</td>
-      <td>${r.site || '—'}</td>
-      <td>${ROLE_LABELS[r.role_code] || '—'}</td>
-      <td>B${r.block_number || '—'}</td>
-      <td>${r.answer_given || '—'}</td>
-      <td style="color:${r.is_correct ? '#39ff14' : '#ff3333'}">${r.is_correct ? '✓' : '✗'}</td>
-      <td style="font-family:Share Tech Mono;font-size:9px">${r.submitted_at ? new Date(r.submitted_at).toLocaleDateString() : '—'}</td>
+function renderDashboard(){
+  const stats=getStats(FILTERED);
+  if(!stats){renderEmpty();return;}
+
+  document.getElementById('kpi-p').textContent=stats.participants.length;
+  document.getElementById('kpi-p-sub').textContent='unique participants';
+  document.getElementById('kpi-r').textContent=FILTERED.length;
+  document.getElementById('kpi-r-sub').textContent=stats.mc.length+' MC + '+stats.oe.length+' OE';
+  const ae=document.getElementById('kpi-a');
+  ae.textContent=stats.accuracy+'%';
+  ae.className='kv '+(stats.accuracy>=90?'n':stats.accuracy>=70?'am':'re');
+  document.getElementById('kpi-a-d').textContent=stats.accuracy>=70?'↑ Above 70% target':'↓ Below 70% threshold';
+  document.getElementById('kpi-a-d').className='kd '+(stats.accuracy>=70?'up':'dn');
+  document.getElementById('kpi-g').textContent=stats.criticalGaps;
+  document.getElementById('kpi-m').textContent=stats.maturity;
+  document.getElementById('kpi-m-sub').textContent=stats.maturitySub;
+
+  document.getElementById('maturity-bars').innerHTML=
+    Object.entries(stats.blockPct).sort((a,b)=>a[0]-b[0]).map(([b,p])=>{
+      return `<div class="mr"><div class="mn">Block ${b} — ${BLOCK_NAMES[b]||''}</div>
+        <div class="mt"><div class="mf ${scoreCls(p)}" style="width:${p}%"></div></div>
+        <div class="mp">${p}%</div><div class="ml ${scoreLabelCls(p)}">${scoreLabel(p)}</div></div>`;
+    }).join('');
+
+  const bKeys=Object.keys(stats.blockPct).sort();
+  destroyChart('cBlock');
+  charts['cBlock']=new Chart(document.getElementById('cBlock'),hbarCfg(
+    bKeys.map(b=>`B${b} ${(BLOCK_NAMES[b]||'').slice(0,10)}`),
+    bKeys.map(b=>stats.blockPct[b])
+  ));
+
+  destroyChart('cDist');
+  charts['cDist']=new Chart(document.getElementById('cDist'),{
+    type:'bar',
+    data:{labels:['<40%','40–50%','50–60%','60–70%','70–80%','80–90%','>90%'],
+      datasets:[{data:stats.distBuckets,backgroundColor:['#ff3333cc','#ff3333aa','#ff333388','#ff333366','#ffaa00aa','#ffaa00cc','#39ff14cc'],borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#555',font:{size:10}},grid:{color:'#1c1c1c'}},y:{ticks:{color:'#555',font:{size:10}},grid:{color:'#1c1c1c'}}}}
+  });
+
+  renderSignals(stats);
+  renderBlockCharts(stats.catByBlock);
+  renderRoleCards(stats.rolePct,stats.blockPctByRole);
+  renderRadar(stats.rolePct,stats.blockPctByRole);
+  renderResponses();
+  renderOE();
+}
+
+function renderEmpty(){
+  document.getElementById('kpi-p').textContent='0';
+  document.getElementById('kpi-p-sub').textContent='no data yet';
+  document.getElementById('kpi-r').textContent='0';
+  document.getElementById('kpi-a').textContent='—';
+  document.getElementById('kpi-g').textContent='—';
+  document.getElementById('kpi-m').textContent='NO DATA';
+  document.getElementById('signals-grid').innerHTML='<div class="empty" style="grid-column:1/-1">NO RESPONSES YET — Share the survey link with participants.</div>';
+}
+
+function renderSignals(stats){
+  const sorted=Object.entries(stats.blockPct).sort((a,b)=>a[1]-b[1]);
+  const lowest=sorted[0];const second=sorted[1];const highest=sorted[sorted.length-1];
+  document.getElementById('signals-grid').innerHTML=[
+    {type:'',icon:'⚠ CRITICAL GAP',title:lowest?`Block ${lowest[0]}: ${BLOCK_NAMES[lowest[0]]} (${lowest[1]}%)`:'Awaiting Data',body:lowest?`Lowest scoring block at ${lowest[1]}% accuracy. Highest-priority capability intervention area.`:'More responses needed.'},
+    {type:'w',icon:'◈ WEAK SIGNAL',title:second?`Block ${second[0]}: ${BLOCK_NAMES[second[0]]} (${second[1]}%)`:'Awaiting Data',body:second?`Second critical gap at ${second[1]}% accuracy. Requires structured development program.`:'More responses needed.'},
+    {type:'ok',icon:'✓ STRENGTH',title:highest?`Block ${highest[0]}: ${BLOCK_NAMES[highest[0]]} (${highest[1]}%)`:'Awaiting Data',body:highest?`Strongest block at ${highest[1]}% accuracy. Viable foundation for capability building.`:'More responses needed.'},
+    {type:'',icon:'⚠ MATURITY',title:`Org Level: ${stats.maturity}`,body:`Overall accuracy of ${stats.accuracy}% — ${stats.maturitySub}. ${stats.accuracy<70?'Immediate structured intervention required.':stats.accuracy<90?'Targeted development programs recommended.':'Continue sustaining improvement programs.'}`},
+    {type:'w',icon:'◈ OPEN-ENDED',title:`${stats.oe.length} Qualitative Responses`,body:`${stats.oe.length} open-ended responses across ${[...new Set(stats.oe.map(r=>r.participant_name))].length} participants. Use Open-Ended tab for review and AI-powered analysis.`},
+    {type:stats.criticalGaps>2?'':'w',icon:stats.criticalGaps>2?'⚠ URGENT':'◈ MONITOR',title:`${stats.criticalGaps} Block${stats.criticalGaps!==1?'s':''} Below 70%`,body:stats.criticalGaps>2?'Multiple blocks in critical range. Prioritize immediate interventions.':stats.criticalGaps>0?'Monitor and initiate targeted capability programs.':'No blocks in critical range.'}
+  ].map(s=>`<div class="ic ${s.type}"><div class="ii">${s.icon}</div><div class="it">${s.title}</div><div class="ib">${s.body}</div></div>`).join('');
+}
+
+function applyBlockFilters(){
+  const site=document.getElementById('b-site').value;
+  const role=document.getElementById('b-role').value;
+  const block=document.getElementById('b-block').value;
+  let data=ALL_DATA.filter(r=>r.question_type==='multiple_choice');
+  if(site!=='all') data=data.filter(r=>r.site===site);
+  if(role!=='all') data=data.filter(r=>r.role_code===role);
+  if(block!=='all') data=data.filter(r=>String(r.block_number)===block);
+  const catByBlock={};
+  data.filter(r=>r.block_number!==7&&r.block_number!==8).forEach(r=>{
+    const b=r.block_number;
+    const cat=r.category||'Unknown';
+    if(!catByBlock[b]) catByBlock[b]={};
+    if(!catByBlock[b][cat]) catByBlock[b][cat]={correct:0,total:0};
+    catByBlock[b][cat].total++;
+    if(r.is_correct) catByBlock[b][cat].correct++;
+  });
+  renderBlockCharts(catByBlock);
+}
+
+function renderBlockCharts(catByBlock){
+  for(let b=1;b<=6;b++){
+    const cats=catByBlock[b]||{};
+    const validEntries=Object.entries(cats).filter(([cat])=>
+      !cat.match(/^(Q\d|OE\d|JD\d|Unknown)/) || cat.length > 5
+    );
+    destroyChart('cB'+b);
+    if(!validEntries.length){
+      const canvas=document.getElementById('cB'+b);
+      if(canvas){
+        const ctx=canvas.getContext('2d');
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle='#444';ctx.font='11px Share Tech Mono';ctx.textAlign='center';
+        ctx.fillText('NO DATA YET',canvas.width/2,canvas.height/2);
+      }
+      continue;
+    }
+    const labels=validEntries.map(([cat])=>cat.length>20?cat.slice(0,20)+'…':cat);
+    const vals=validEntries.map(([,v])=>Math.round((v.correct/v.total)*100));
+    charts['cB'+b]=new Chart(document.getElementById('cB'+b),hbarCfg(labels,vals));
+  }
+}
+
+function renderRoleCards(rolePct,blockPctByRole){
+  const roles=Object.keys(ROLE_LABELS);
+  document.getElementById('role-cards').innerHTML=roles.map(r=>{
+    const rp=rolePct[r];
+    if(!rp) return `<div class="rc"><div class="rn">${ROLE_LABELS[r]}</div><div class="rct">// NO DATA YET</div></div>`;
+    const col=scoreColor(rp.score);
+    const roleBlocks=blockPctByRole[r]||{};
+    return `<div class="rc">
+      <div class="rn">${ROLE_LABELS[r]}</div><div class="rct">// ${rp.count} PARTICIPANT${rp.count!==1?'S':''}</div>
+      <div class="rs" style="color:${col}">${rp.score}<span style="font-size:18px">%</span></div>
+      <div class="rsl">MC ACCURACY</div>
+      ${Object.entries(roleBlocks).sort((a,b)=>a[0]-b[0]).map(([bl,p])=>{
+        return `<div class="mni"><div class="mnl">B${bl} ${(BLOCK_NAMES[bl]||'').slice(0,8)}</div><div class="mntr"><div class="mnf ${scoreCls(p)}" style="width:${p}%"></div></div><div class="mnp">${p}%</div></div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
+function renderRadar(rolePct,blockPctByRole){
+  const labels=Object.entries(BLOCK_NAMES).filter(([b])=>b!='7'&&b!='8').map(([,n])=>n.slice(0,10));
+  const roleColors={RE_MGR:'#39ff14',MAINT_MGR:'#ffaa00',SR_RE:'#00cfff',RE:'#b84fff',MAINT_SCH:'#ff3333',PS_MGR:'#ff7043',WHOUSE_MGR:'#00e5ff',UTL_MGR:'#69ff47'};
+  const datasets=Object.entries(rolePct).map(([role])=>({
+    label:ROLE_LABELS[role]||role,
+    data:Object.keys(BLOCK_NAMES).filter(b=>b!='7'&&b!='8').map(b=>(blockPctByRole[role]&&blockPctByRole[role][b])||0),
+    borderColor:roleColors[role]||'#888',
+    backgroundColor:(roleColors[role]||'#888')+'22',
+    pointBackgroundColor:roleColors[role]||'#888',
+    borderWidth:2
+  }));
+  destroyChart('cRadar');
+  if(datasets.length){
+    charts['cRadar']=new Chart(document.getElementById('cRadar'),{
+      type:'radar',data:{labels,datasets},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:true,labels:{color:'#aaa',font:{size:10}}}},
+        scales:{r:{ticks:{display:false,backdropColor:'transparent'},grid:{color:'#2a2a2a'},pointLabels:{color:'#888',font:{size:10}},min:0,max:100}}}
+    });
+  }
+}
+
+function renderResponses(){
+  const site=document.getElementById('r-site').value;
+  const role=document.getElementById('r-role').value;
+  const block=document.getElementById('r-block').value;
+  const perf=document.getElementById('r-perf').value;
+  const pScores={};
+  ALL_DATA.filter(r=>r.question_type==='multiple_choice').forEach(r=>{
+    if(!pScores[r.participant_name]) pScores[r.participant_name]={correct:0,total:0};
+    pScores[r.participant_name].total++;
+    if(r.is_correct) pScores[r.participant_name].correct++;
+  });
+  let rows=ALL_DATA.filter(r=>r.question_type==='multiple_choice');
+  if(site!=='all') rows=rows.filter(r=>r.site===site);
+  if(role!=='all') rows=rows.filter(r=>r.role_code===role);
+  if(block!=='all') rows=rows.filter(r=>String(r.block_number)===block);
+  if(perf!=='all'){
+    rows=rows.filter(r=>{
+      const ps=pScores[r.participant_name];if(!ps) return false;
+      const s=Math.round((ps.correct/ps.total)*100);
+      return perf==='hi'?s>70:perf==='mid'?s>=55&&s<=70:s<55;
+    });
+  }
+  const sc=r=>{const ps=pScores[r.participant_name];return ps?Math.round((ps.correct/ps.total)*100)+'%':'—';};
+  const scCls=r=>{const ps=pScores[r.participant_name];if(!ps) return 'sp';const s=Math.round((ps.correct/ps.total)*100);return s>=90?'shi sp':s>=70?'smi sp':'slo sp'};
+  document.getElementById('resp-body').innerHTML=!rows.length
+    ?'<tr><td colspan="10" style="text-align:center;padding:40px;font-family:\'Share Tech Mono\',monospace;font-size:10px;color:var(--w3)">NO RESPONSES YET</td></tr>'
+    :rows.map(r=>`<tr>
+      <td style="font-family:'Share Tech Mono',monospace;color:var(--n);letter-spacing:.1em">${r.participant_name||'—'}</td>
+      <td><span class="tg td">${r.site||'—'}</span></td>
+      <td><span class="tg tr2">${ROLE_LABELS[r.role_code]||r.role_code||'—'}</span></td>
+      <td style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3)">B${r.block_number||'—'}</td>
+      <td style="font-size:11px;color:var(--w3)">${r.category||'—'}</td>
+      <td style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--w3)">${r.question_id||'—'}</td>
+      <td style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:${r.is_correct?'var(--n)':'var(--r)'}">${r.answer_given||'—'}</td>
+      <td style="font-family:'Share Tech Mono',monospace;font-size:10px;color:${r.is_correct?'var(--n)':'var(--r)'}">${r.is_correct?'✓':'✗'}</td>
+      <td><span class="${scCls(r)}">${sc(r)}</span></td>
+      <td style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3)">${r.submitted_at?new Date(r.submitted_at).toLocaleDateString():'—'}</td>
     </tr>`).join('');
 }
 
-const TABS = ['executive', 'responses'];
-function tab(id) {
-  TABS.forEach(t => {
-    document.getElementById('t-' + t).classList.toggle('act', t === id);
-    document.querySelectorAll('nav button')[TABS.indexOf(t)].classList.toggle('act', t === id);
+let OE_SYNTHESES={};
+let showRaw=false;
+
+function toggleRawResponses(){
+  showRaw=!showRaw;
+  document.querySelectorAll('.oe-raw-section').forEach(el=>{
+    el.style.display=showRaw?'block':'none';
   });
 }
-</script>
 
+function renderOE(){
+  const site=document.getElementById('oe-site').value;
+  const block=document.getElementById('oe-block').value;
+  let rows=ALL_DATA.filter(r=>r.question_type==='open_ended'&&r.response_text);
+  if(site!=='all') rows=rows.filter(r=>r.site===site);
+  if(block!=='all') rows=rows.filter(r=>String(r.block_number)===block);
+  const el=document.getElementById('oe-panels');
+  if(!rows.length){el.innerHTML='<div class="empty">NO OPEN-ENDED RESPONSES YET</div>';return;}
+  const grouped={};
+  rows.forEach(r=>{
+    const role=r.role_code||'UNKNOWN';
+    const bn=r.block_number;
+    const key=role+'_'+bn;
+    if(!grouped[key]) grouped[key]={role,block:bn,label:ROLE_LABELS[role]||role,blockName:BLOCK_NAMES[bn]||('Block '+bn),rows:[]};
+    grouped[key].rows.push(r);
+  });
+  const roleOrder=Object.keys(ROLE_LABELS);
+  const sorted=Object.values(grouped).sort((a,b)=>{
+    const ri=roleOrder.indexOf(a.role)-roleOrder.indexOf(b.role);
+    return ri!==0?ri:a.block-b.block;
+  });
+  el.innerHTML=sorted.map(g=>{
+    const key=g.role+'_'+g.block;
+    const synth=OE_SYNTHESES[key];
+    const rawHtml=g.rows.map(r=>`
+      <div style="border-left:2px solid var(--br);padding:10px 14px;margin-bottom:8px">
+        <div style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+          <span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--n);letter-spacing:.08em">${r.participant_name||'—'}</span>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.06em">${r.question_id||'—'}</span>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3)">${r.category||'—'}</span>
+        </div>
+        <div style="font-size:12px;color:var(--w2);line-height:1.7">${r.response_text}</div>
+      </div>`).join('');
+    return `
+    <div class="cc" style="margin-bottom:4px" id="oe-panel-${key}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--w)">${g.label}</div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.1em;margin-top:3px">Block ${g.block} — ${g.blockName} // ${g.rows.length} RESPONSE${g.rows.length!==1?'S':''}</div>
+        </div>
+        <button class="bp" style="font-size:10px;padding:6px 14px" onclick="synthesizeRole('${key}','${g.role}',${g.block})">▸ SYNTHESIZE</button>
+      </div>
+      ${synth?`
+      <div style="background:rgba(57,255,20,.04);border:1px solid var(--nd);padding:16px 20px;margin-bottom:12px">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--n);letter-spacing:.12em;margin-bottom:10px">▸ AI EXECUTIVE SYNTHESIS — ${g.label.toUpperCase()} / BLOCK ${g.block}</div>
+        <div style="font-size:13px;color:var(--w2);line-height:1.85;white-space:pre-wrap">${synth}</div>
+      </div>`:`
+      <div style="background:var(--bk3);border:1px solid var(--br);padding:12px 16px;margin-bottom:12px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--w3);letter-spacing:.08em">
+        ◈ No synthesis generated yet — click SYNTHESIZE to analyze all ${g.rows.length} responses for this role and block.
+      </div>`}
+      <div class="oe-raw-section" style="display:${showRaw?'block':'none'}">${rawHtml}</div>
+    </div>`;
+  }).join('');
+}
+
+async function synthesizeRole(key,role,block){
+  if(!checkAIPassword()) return;
+  const site=document.getElementById('oe-site').value;
+  let rows=ALL_DATA.filter(r=>r.question_type==='open_ended'&&r.response_text&&r.role_code===role&&r.block_number===block);
+  if(site!=='all') rows=rows.filter(r=>r.site===site);
+  if(!rows.length){alert('No responses to analyze for this role and block.');return;}
+  const panel=document.getElementById('oe-panel-'+key);
+  const btn=panel.querySelector('button');
+  btn.textContent='ANALYZING...';btn.disabled=true;
+  const responsesText=rows.map((r,i)=>`[Response ${i+1} — ${r.participant_name}]\nQuestion: ${r.question_text||r.question_id}\nAnswer: ${r.response_text}`).join('\n\n');
+  const blockName=BLOCK_NAMES[block]||('Block '+block);
+  const roleLabel=ROLE_LABELS[role]||role;
+  const prompt=`You are a Senior Maintenance & Reliability Transformation Consultant. You are analyzing ALL open-ended responses from the "${roleLabel}" role group for Block ${block} (${blockName}) of a diagnostic assessment.\n\nROLE: ${roleLabel}\nBLOCK: ${block} — ${blockName}\nNUMBER OF RESPONDENTS: ${rows.length}\n\nALL RESPONSES:\n${responsesText}\n\nProduce a structured EXECUTIVE SYNTHESIS covering:\n1. CAPABILITY LEVEL — Overall maturity demonstrated across this group (1-2 sentences)\n2. DOMINANT PATTERNS — What thinking patterns, assumptions, or approaches appear consistently (2-3 sentences)\n3. CRITICAL GAPS — What is systematically missing, shallow, or incorrect across the group (2-3 sentences)\n4. RECOMMENDED INTERVENTIONS — Specific, actionable development priorities for this role on this topic (2-3 bullet points)\n\nBe direct and diagnostic. Write for a Plant Director reviewing their leadership team. Max 200 words total.`;
+  try{
+    const text=await callClaude([{role:'user',content:prompt}]);
+    OE_SYNTHESES[key]=text;
+    renderOE();
+  }catch(e){
+    btn.textContent='▸ SYNTHESIZE';btn.disabled=false;
+    alert('AI error: '+e.message);
+  }
+}
+
+function checkAIPassword(){
+  const pwd=prompt('Enter password to access AI Analysis:');
+  if(pwd!==AI_PASSWORD){alert('Incorrect password.');return false;}
+  return true;
+}
+
+async function callClaude(messages){
+  try{
+    const resp=await fetch(PROXY_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY},
+      body:JSON.stringify({messages})
+    });
+    const raw=await resp.text();
+    if(!resp.ok) throw new Error('Proxy HTTP error: '+resp.status+' — '+raw);
+    const data=JSON.parse(raw);
+    if(data.text) return data.text;
+    if(data.content) return data.content.map(b=>b.text||'').join('');
+    if(data.error) throw new Error('Proxy error: '+data.error);
+    throw new Error('Unexpected response format: '+raw);
+  }catch(e){
+    console.error('callClaude error:',e);
+    throw e;
+  }
+}
+
+async function runOEAnalysis(){
+  if(!checkAIPassword()) return;
+  const site=document.getElementById('oe-site').value;
+  const block=document.getElementById('oe-block').value;
+  let rows=ALL_DATA.filter(r=>r.question_type==='open_ended'&&r.response_text);
+  if(site!=='all') rows=rows.filter(r=>r.site===site);
+  if(block!=='all') rows=rows.filter(r=>String(r.block_number)===block);
+  if(!rows.length){alert('No open-ended responses with current filters.');return;}
+  const combos=[...new Set(rows.map(r=>r.role_code+'_'+r.block_number))];
+  document.getElementById('oe-panels').innerHTML=
+    `<div class="empty">SYNTHESIZING ${combos.length} ROLE-BLOCK GROUPS...<br><br><div class="dots" style="justify-content:center;display:flex"><span></span><span></span><span></span></div></div>`;
+  for(const combo of combos){
+    const parts=combo.split('_');
+    const role=parts[0];
+    const bn=parseInt(parts[1]);
+    let grpRows=ALL_DATA.filter(r=>r.question_type==='open_ended'&&r.response_text&&r.role_code===role&&r.block_number===bn);
+    if(site!=='all') grpRows=grpRows.filter(r=>r.site===site);
+    if(!grpRows.length) continue;
+    const responsesText=grpRows.map((r,i)=>`[Response ${i+1} — ${r.participant_name}]\nQuestion: ${r.question_text||r.question_id}\nAnswer: ${r.response_text}`).join('\n\n');
+    const blockName=BLOCK_NAMES[bn]||('Block '+bn);
+    const roleLabel=ROLE_LABELS[role]||role;
+    const prompt=`You are a Senior Maintenance & Reliability Transformation Consultant. You are analyzing ALL open-ended responses from the "${roleLabel}" role group for Block ${bn} (${blockName}) of a diagnostic assessment.\n\nROLE: ${roleLabel}\nBLOCK: ${bn} — ${blockName}\nNUMBER OF RESPONDENTS: ${grpRows.length}\n\nALL RESPONSES:\n${responsesText}\n\nProduce a structured EXECUTIVE SYNTHESIS covering:\n1. CAPABILITY LEVEL — Overall maturity demonstrated across this group (1-2 sentences)\n2. DOMINANT PATTERNS — What thinking patterns, assumptions, or approaches appear consistently (2-3 sentences)\n3. CRITICAL GAPS — What is systematically missing, shallow, or incorrect across the group (2-3 sentences)\n4. RECOMMENDED INTERVENTIONS — Specific, actionable development priorities for this role on this topic (2-3 bullet points)\n\nBe direct and diagnostic. Write for a Plant Director reviewing their leadership team. Max 200 words total.`;
+    try{
+      const text=await callClaude([{role:'user',content:prompt}]);
+      OE_SYNTHESES[combo]=text;
+    }catch(e){console.error('Synthesis error for '+combo+':',e);}
+  }
+  renderOE();
+}
+
+function destroyChart(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
+
+function hbarCfg(labels,data){
+  return{type:'bar',data:{labels,datasets:[{data,backgroundColor:data.map(v=>scoreColorHex(v)+'bb'),borderWidth:0}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+'%'}}},
+      scales:{x:{min:0,max:100,ticks:{color:'#555',font:{size:10},callback:v=>v+'%'},grid:{color:'#1c1c1c'}},
+              y:{ticks:{color:'#777',font:{size:10}},grid:{color:'#1c1c1c'}}}}};
+}
+
+const TABS=['executive','blocks','roles','responses','openended','ai'];
+function tab(id){
+  TABS.forEach(t=>{
+    document.getElementById('t-'+t).classList.toggle('act',t===id);
+    document.querySelectorAll('nav button')[TABS.indexOf(t)].classList.toggle('act',t===id);
+  });
+  if(id==='responses') renderResponses();
+  if(id==='openended') renderOE();
+  if(id==='blocks') applyBlockFilters();
+}
+
+async function runAI(fo){
+  if(!checkAIPassword()) return;
+  const scope=document.getElementById('asc').value;
+  const focus=fo||document.getElementById('afo').value;
+  const out=document.getElementById('aout');
+  const stats=getStats(FILTERED);
+  out.innerHTML='<div style="display:flex;align-items:center;gap:10px;color:var(--n);font-family:\'Share Tech Mono\',monospace;font-size:11px;letter-spacing:.1em">ANALYZING '+FILTERED.length+' REAL RESPONSES <div class="dots"><span></span><span></span><span></span></div></div>';
+  const blockSum=stats?Object.entries(stats.blockPct).map(([b,v])=>`Block ${b} (${BLOCK_NAMES[b]}): ${v}%`).join(', '):'No data';
+  const roleSum=stats?Object.entries(stats.rolePct).map(([r,v])=>`${ROLE_LABELS[r]||r}: ${v.score}% (n=${v.count})`).join(', '):'No data';
+  const fMap={
+    gaps:'Identify the top 5 priority capability gaps revealed by the assessment data. For each gap: name it clearly, explain its business risk, identify which roles are most affected, and state the priority level. Reference actual block and category scores.',
+    training:'Based on the assessment results, identify the most critical training and development topics. Organize by role group. For each topic explain WHY it is a priority based on the data, what competency it builds, and what format of development would be most effective.',
+    culture:'Provide a deep diagnostic of the cultural and behavioral patterns revealed by the data. Focus on ownership, accountability, discipline under pressure, and the gap between espoused values and actual behaviors.',
+    roadmap:'Design a phased reliability transformation roadmap: Phase 1 (0–3 months: stabilize), Phase 2 (3–6 months: build capability), Phase 3 (6–12 months: sustain and improve). Include milestones, governance checkpoints, and success metrics.',
+    coaching:'Provide specific, role-by-role coaching recommendations based on performance gaps. For each role: top 2–3 development priorities, recommended coaching approach, and what good looks like at maturity.'
+  };
+  const prompt=`You are a Senior Reliability & Maintenance Transformation Consultant analyzing REAL assessment data from an industrial manufacturing organization.\n\nLIVE DIAGNOSTIC DATA:\n- Participants: ${stats?stats.participants.length:0}\n- Overall MC Accuracy: ${stats?stats.accuracy+'%':'No data'}\n- Org Maturity Level: ${stats?stats.maturity:'Unknown'}\n- Block scores: ${blockSum}\n- Role scores: ${roleSum}\n- Open-ended responses collected: ${stats?stats.oe.length:0}\n- Analysis scope: ${scope==='all'?'Full organization':ROLE_LABELS[scope]||scope}\n\nTASK: ${fMap[focus]||fMap.gaps}\n\nWrite as a senior consultant briefing a Maintenance & Reliability Director. Reference actual numbers and blocks from the data above. Be direct, specific, and diagnostic. Use numbered sections with clear headers. 400–500 words.`;
+  try{
+    const text=await callClaude([{role:'user',content:prompt}]);
+    out.textContent='';
+    let i=0;
+    const iv=setInterval(()=>{
+      out.textContent=text.slice(0,i);
+      i+=4;
+      if(i>text.length){out.textContent=text;clearInterval(iv);}
+    },14);
+  }catch(e){
+    out.textContent='ERROR: '+e.message+'\n\nCheck browser console (F12) for details.';
+    out.style.color='var(--r)';
+  }
+}
+
+loadData();
+setInterval(loadData,60000);
+</script>
 </body>
 </html>
